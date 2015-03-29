@@ -1,0 +1,7 @@
+<% @friends.each do |f| %>
+	<% if f.friend.id == current_user.id%>
+		<li> <%= f.user.last_name %></li>
+	<% else %>
+		<li> <%= f.friend.last_name %></li>
+	<% end %>
+<% end %>
