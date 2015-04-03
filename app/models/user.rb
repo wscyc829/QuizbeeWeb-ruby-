@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
   has_many :users, :class_name => 'Friendship', :foreign_key => 'friend_id', dependent: :destroy
   has_many :friends, :class_name => 'Friendship', :foreign_key => 'user_id', dependent: :destroy
   has_many :friendships, dependent: :destroy
-
+  has_many :questions, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  
   validates :username, presence: true, uniqueness: true
   validates :password_hash, presence: true
   validates :salt, presence: true

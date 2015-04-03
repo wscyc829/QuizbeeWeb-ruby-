@@ -1,8 +1,9 @@
 class Room < ActiveRecord::Base
+	has_many :questions, dependent: :destroy
+	has_many :messages, dependent: :destroy
 	belongs_to :owner, :class_name => 'User'
 
 	validates_uniqueness_of :owner_id, :scope => [:room_name]
-
 	validates :room_name, :owner_id, presence: true
 
 	def self.create_room(room_name, owner_id)

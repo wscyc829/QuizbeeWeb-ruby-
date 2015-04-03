@@ -5,25 +5,41 @@ class ApplicationController < ActionController::Base
   before_action :require_login
   respond_to :html, :js
 
-  include SessionsHelper
+  include SessionsHelper, ApplicationHelper
 
   def index
     @room = Room.new
     @rooms = current_user.rooms
 
     @friend = Friendship.new
-    @friends = current_user.friendships + current_user.users
+    @friends = Array.new
+    friendships = current_user.friendships + current_user.users
+      
 
+    friendships.each do |f|
+      if f.friend.id == current_user.id
+        @friends.push(f.user)
+        @rooms += f.user.rooms
+      else
+        @friends.push(f.friend)
+        @rooms += f.friend.rooms
+      end
+    end
+
+    if entered?
+      @questions = current_room.questions
+      @messages = current_room.messages
+    end
   end
 
   def logout
+      exit if entered?
       log_out if logged_in?
       redirect_to login_path
   end
 
   
   def create_room
-
     @room = current_user.rooms.create!(room_name: params[:cr][:room_name])
     @rooms = current_user.rooms
   end
@@ -35,6 +51,31 @@ class ApplicationController < ActionController::Base
     @friends = current_user.friendships + current_user.users
   end
 
+  def post_question
+    body = params[:pq][:body]
+    Question.create(user_id: current_user.id, room_id: current_room.id, body: body)
+    @questions = current_room.questions
+  end
+
+  def post_comment
+    body = params[:pc][:body]
+    question = Question.find_by(id: params[:pc][:question_id])
+    Comment.create(user_id: current_user.id, question_id: question.id, body: body)
+    @questions = current_room.questions
+  end
+  
+  def send_message
+    body = params[:sm][:body]
+    Message.create(user_id: current_user.id, room_id: current_room.id, body: body)
+    @messages = current_room.messages
+  end
+
+  def switch_room
+    session[:room_id] = params[:sr][:room_id]
+    @questions = current_room.questions
+  end
+
+  
   private
 
     def require_login

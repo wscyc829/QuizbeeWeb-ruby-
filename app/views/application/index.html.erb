@@ -10,23 +10,23 @@
 <div id="roomlist">
 	<div class="somesection">ROOMS</div>
 	<div id="roomlist-list">
-		<%= render 'room' %>
+		<%= render 'rooms/room' %>
 	</div>
 	<div id="create-room-form">
-		<%= render 'create_room' %>
+		<%= render 'rooms/create_room' %>
 	</div>
 </div>
 
 <div id="maincontainer" >
-	<!--<iframe src="/quizbee/play" ></iframe> -->
+	<%= render 'discussion_room' %>
 </div>
 
 <div id="friendslist">
 	<div class="somesection">FRIENDS</div>
 	<ul id="friendlist-list">
-		<%= render 'friend' %>
+		<%= render 'friends/friend' %>
 	</ul>
 	<div id="add-friend-form">
-		<%= render 'add_friend' %>
+		<%= render 'friends/add_friend' %>
 	</div>
 </div>

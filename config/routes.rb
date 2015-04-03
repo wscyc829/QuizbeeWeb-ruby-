@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
-  root 'application#index'
+  root    'application#index'
 
-  get   'login'   => 'sessions#index'
-  post  'login'   => 'sessions#login'
+  get     'login'               => 'sessions#index'
+  post    'login'               => 'sessions#login'
 
-  get   'signup'  => 'users#index'
+  get     'signup'              => 'users#index'
   
-  delete 'logout' => 'application#logout'
+  delete  'logout'              => 'application#logout'
 
-  post 'create_room' => 'application#create_room'
-  post  'add_friend' => 'application#add_friend'
+  post    'create_room'         => 'application#create_room'
+  post    'add_friend'          => 'application#add_friend'
+  post    'post_question'       => 'application#post_question'
+  post    'post_comment'        => 'application#post_comment'
+  post    'send_message'        => 'application#send_message'
+  post    'switch_room'         => 'application#switch_room'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
