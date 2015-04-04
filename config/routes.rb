@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post    'post_comment'        => 'application#post_comment'
   post    'send_message'        => 'application#send_message'
   post    'switch_room'         => 'application#switch_room'
+
+  resources :users, only:[:new,:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
