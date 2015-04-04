@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
+
+gem 'private_pub'
+gem 'faye'
+gem 'thin'
+
 gem 'bcrypt'
 gem 'mysql2'
 
 gem 'responders'
-
-gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

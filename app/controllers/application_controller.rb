@@ -73,6 +73,7 @@ class ApplicationController < ActionController::Base
   def switch_room
     session[:room_id] = params[:sr][:room_id]
     @questions = current_room.questions
+    @messages = current_room.messages
   end
 
   
