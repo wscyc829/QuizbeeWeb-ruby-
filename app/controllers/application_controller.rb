@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   respond_to :html, :js
 
   include SessionsHelper, ApplicationHelper
-  require 'pubnub'
 
   def index
     @room = Room.new
