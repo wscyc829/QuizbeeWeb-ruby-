@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402134617) do
+ActiveRecord::Schema.define(version: 20150405021912) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20150402134617) do
   add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id", using: :btree
   add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true, using: :btree
   add_index "friendships", ["user_id"], name: "index_friendships_on_user_id", using: :btree
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "comment_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "likes", ["comment_id"], name: "index_likes_on_comment_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.integer  "user_id",    limit: 4

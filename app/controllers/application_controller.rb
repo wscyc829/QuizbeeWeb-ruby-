@@ -76,7 +76,19 @@ class ApplicationController < ActionController::Base
     @messages = current_room.messages
   end
 
-  
+  def like_comment
+    comment_id = params[:comment_id]
+    Like.create(user_id: current_user.id, comment_id: comment_id)
+    @questions = current_room.questions
+  end
+
+  def unlike_comment
+    comment_id = params[:comment_id]
+    Like.find_by(user_id: current_user.id, comment_id: comment_id).destroy
+    
+    @questions = current_room.questions
+  end
+
   private
 
     def require_login
