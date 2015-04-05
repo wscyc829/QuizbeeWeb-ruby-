@@ -1,2 +1,5 @@
-$('#chat_area').html("<%= escape_javascript(render 'messages/messages') %>")
+<% publish_to "/send_message" do %>
+	$('#chat_area').html("<%= render 'messages/messages' %>")
+<% end %>
 $('#send_message').html("<%= escape_javascript(render 'messages/message_form') %>")
+

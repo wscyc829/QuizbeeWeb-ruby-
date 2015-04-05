@@ -186,7 +186,6 @@ DEPENDENCIES
   bcrypt
   byebug
   coffee-rails (~> 4.1.0)
-  faye
   jbuilder (~> 2.0)
   jquery-rails
   mysql2

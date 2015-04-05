@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'private_pub'
-gem 'faye'
 gem 'thin'
-
 gem 'bcrypt'
 gem 'mysql2'
 
