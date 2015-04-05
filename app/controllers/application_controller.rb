@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   respond_to :html, :js
 
   include SessionsHelper, ApplicationHelper
+  require 'pubnub'
 
   def index
     @room = Room.new
@@ -68,6 +69,7 @@ class ApplicationController < ActionController::Base
     body = params[:sm][:body]
     Message.create(user_id: current_user.id, room_id: current_room.id, body: body)
     @messages = current_room.messages
+
   end
 
   def switch_room
