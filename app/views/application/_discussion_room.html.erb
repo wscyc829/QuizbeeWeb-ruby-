@@ -1,18 +1,19 @@
+<%= stylesheet_link_tag 'play.css' %>
 <% if entered? %>
-	<%= current_room.room_name %>
+	<div align="center"> <%= current_room.room_name %> </div>
 	<!-- ask and answer question area-->
-	<div id='question_area' style="height:200px;width:200px;border:1px solid red;overflow-y: scroll;">
+	<div id='question_area' align="center" style="height:300px;width:900px;border:1px solid red;overflow-y: scroll;">
 		<%= render 'questions/questions' %>
 	</div>
-	<div id="post_question">
+	<div id="post_question" align="center">
 		<%= render 'questions/question_form' %>
 	</div>
 
 	<!-- chat area-->
-	<div id="chat_area" style="height:200px;width:200px;border:1px solid red; overflow-y: scroll;">
-		<%= render 'messages/messages' %>
+	<div id="chat_area" style="height:300px;width:900px;border:1px solid red;overflow-y: scroll;">
+		<%= render 'messages/messages'%>
 	</div>
-	<div id="send_message">
+	<div id="send_message" align="center">
 		<%= render 'messages/message_form' %>
 	</div>
 <% end %>

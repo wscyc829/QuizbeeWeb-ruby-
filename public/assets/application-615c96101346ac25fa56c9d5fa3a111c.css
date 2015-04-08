@@ -1,0 +1,537 @@
+@font-face { font-family: Neoteric; src: url('../fonts/neoteric.ttf'); }
+@font-face { font-family: 'Lemon'; src: url('../fonts/lemon.otf'); }
+
+/* %%%%%%%%%%%%%%% HEADER %%%%%%%%%%%%%%% */
+
+header {
+	width: 100%;
+	height: 30px;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	background-color: rgba(41, 128, 185, 1.0);
+}
+
+header > span{
+	padding-left: 10px;
+	color: white;
+	font-family: Neoteric;
+}
+
+header > button {
+	width: 100px;
+	height: 100%;
+	float: right;
+	border: none;
+	color: white;
+	background-color: transparent;
+	font-family: Neoteric;
+}
+
+header > button:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+header > button:active {
+	background-color: transparent;
+}
+
+header > button:focus {
+	outline: none;
+}
+
+.somesection {
+	padding-top: 15px;
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+	color: #f1c40f;
+	font-family: 'Lemon';
+	font-size: 30px;
+
+}
+
+/* %%%%%%%%%%%%%%% ROOM %%%%%%%%%%%%%%% */
+
+#roomlist {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 250px;
+	height: calc(100% - 30px);
+	z-index: 9;
+	background-color: rgba(236, 240, 241, 1.0);
+	overflow-y: auto;
+}
+
+#roomlist > ul {
+	color: #2c3e50;
+	padding-left: 0;
+	font-family: Calibri;
+	margin-top: 0;
+}
+
+#roomlist > ul > li {
+	list-style: none;
+	list-style-type: none;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#roomlist > ul > li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#roomlist > ul > li:active {
+	background-color: rgba(0, 0, 0, 0.0);
+}
+
+#roomlist > input[type="button"], #friendslist > input[type="button"]{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	border: 0;
+	background-color: #f39c12;
+	color: white;
+	font-family: 'Lemon';
+	font-size: 30px;
+}
+
+#roomlist > input[type="button"]:hover, #friendslist> input[type="button"]:hover {
+	background-color: #f1c40f;
+}
+
+/* %%%%%%%%%%%%%%% FRIENDS %%%%%%%%%%%%%%% */
+
+#friendslist {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	margin-top: 0px;
+	width: 200px;
+	height: calc(100% - 30px);
+	z-index: 9;
+	background-color: rgba(236, 240, 241, 1.0);
+	overflow-y: auto;
+}
+
+#friendslist > ul {
+	color: #2c3e50;
+	padding-left: 0;
+	font-family: Calibri;
+	margin-top: 0;
+}
+
+#friendslist > ul > li {
+	list-style: none;
+	list-style-type: none;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#friendslist > ul > li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#friendslist > ul > li:active {
+	background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* %%%%%%%%%%%%%%% MAINCONTAINER %%%%%%%%%%%%%%% */
+
+#maincontainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 30px;
+	margin-left: 250px;
+	width: calc(100% - 450px);
+	height: calc(100% - 60px);
+	z-index: 5;
+	// background-color: rgba(236, 240, 241, 1.0);
+	//background-color: white;
+}
+
+#maincontainer > iframe {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border: none;
+}
+@font-face { font-family: Neoteric; src: url('../fonts/neoteric.ttf'); }
+
+#loginpagecontainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #2980b9;
+
+	text-align: center;
+}
+
+#loginpagecontainer:before{
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#smallerlogincontainer {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100vw;
+}
+
+.sometext {
+	color: white;
+	font-family: 'DK Lemon Yellow Sun';
+	font-size: 30px;
+}
+
+.sometextbox {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 15px;
+	color: rgba(41, 128, 185, 1.0);
+	font-family: Neoteric;
+	font-size: 20px;
+	text-align: center;
+}
+
+.sometextbox:focus {
+	outline: none;
+}
+
+.somebutton {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 15px;
+	margin-top: 10px;
+	background-color: #f1c40f;
+
+	color: white;
+	font-family: 'Wolf in the City';
+	font-size: 30px;
+}
+
+.somebutton:hover {
+	background-color: #f39c12;
+}
+
+.somebutton:active {
+	background-color: #f1c40f;
+}
+
+.somebutton:focus {
+	outline: none;
+}
+#gamebox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 50px - 250px);
+	background-color: #d3e5f0;
+}
+
+.somesection {
+	padding-top: 15px;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	// border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+	color: #f1c40f;
+	font-family: 'DK Lemon Yellow Sun';
+	font-size: 24px;
+
+}
+
+/* %%%%%%%%%%%%%%% CHATBAR %%%%%%%%%%%%%%% */
+
+#chatbar {
+	position: absolute;
+	left: 0;
+	bottom: 250px;
+
+	width: 100%;
+	height: 49px;
+
+	border: none;
+	border-top: solid 1px #2c3e50;
+	background-color: white;
+}
+
+#chatbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 90%;
+	height: 100%;
+	border: none;
+	padding-left: 15px;
+	background-color: transparent;
+
+	color: #e67e22;
+	font-size: 24px;
+}
+
+#chatbox:focus {
+	outline: none;
+}
+
+#chatsend {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 10%;
+	height: 100%;
+	border: none;
+	background-color: #f1c40f;
+
+	color: white;
+	font-family: 'DK Lemon Yellow Sun';
+	font-size: 24px;
+}
+
+#chatsend:hover {
+	font-size: 28px;
+}
+
+#chatsend:active {
+	font-size: 24px;
+}
+
+#chatsend:focus {
+	outline: none;
+}
+
+/* %%%%%%%%%%%%%%% SCORES %%%%%%%%%%%%%%% */
+
+#footer {
+	position: absolute;
+	width: 100%;
+	height: 250px;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(41, 128, 185, 1.0);
+}
+
+/* %%%%%%%%%%%%%%% YOURINFO %%%%%%%%%%%%%%% */
+
+#yourinfo {
+	width: 33%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#yourinfo:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#inneryourinfo {
+	width: 99%;
+	height: 90%;
+	display: inline-block;
+	vertical-align: middle;
+	border-right: 2px solid #bdc3c7;
+}
+
+.someinfo {
+	margin-top: 15px;
+	color: white;
+	font-family: Calibri;
+	font-size: 18px;
+}
+
+/* %%%%%%%%%%%%%%% RANKINGS %%%%%%%%%%%%%%% */
+
+#rankings {
+	width: 33%;
+	height: 100%;
+	
+	position: absolute;
+	top: 0;
+	left: 33%;
+
+	text-align: center;
+	overflow: auto;
+}
+
+#rankings:before{
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#innerrankings {
+	width: 99%;
+	height: 90%;
+	display: inline-block;
+	vertical-align: middle;
+	border-right: 2px solid #bdc3c7;
+}
+
+#innerrankings > table {
+	color: white;
+	font-family: Calibri;
+	text-align: center;
+}
+
+#attendees {
+	width: 33%;
+	height: 100%;
+	
+	position: absolute;
+	top: 0;
+	left: 66%;
+
+	text-align: center;
+	overflow: auto;
+}
+
+#attendees:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#innerattendees {
+	width: 99%;
+	height: 90%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#innerattendees > ul {
+	color: white;
+	padding-left: 0;
+	font-family: Calibri;
+	margin-top: 0;
+}
+
+#innerattendees > ul > li {
+	list-style: none;
+	list-style-type: none;
+	padding-top: 10px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+@font-face {
+	font-family: Lemon;
+	src: url(/assets/lemon-b367e30ece8ecaabfd2890c0e9427168.otf);
+}
+
+@font-face {
+	font-family: Neoteric;
+	src: url(/assets/neoteric-a9834ed076c5af92a41ae1d16277db85.ttf);
+}
+
+#loginheader {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2980b9;
+}
+
+#loginpagecontainer {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#smallerlogincontainer {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 25vw;
+}
+
+.heading {
+	font-family: Lemon;
+	color: white;
+	font-size: 30px;
+}
+
+.sometextbox {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 15px;
+	color: rgba(41, 128, 185, 1.0);
+	font-family: Neoteric;
+	font-size: 20px;
+	text-align: center;
+}
+
+.sometextbox:focus {
+	outline: none;
+}
+
+.somebutton {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 15px;
+	margin-top: 10px;
+	background-color: #f1c40f;
+
+	color: white;
+	font-family: 'Wolf in the City';
+	font-size: 30px;
+}
+
+.somebutton:hover {
+	background-color: #f39c12;
+}
+
+.somebutton:active {
+	background-color: #f1c40f;
+}
+
+.somebutton:focus {
+	outline: none;
+}
+
+.somebutton > a {
+	text-decoration: none;
+	color: white;
+}

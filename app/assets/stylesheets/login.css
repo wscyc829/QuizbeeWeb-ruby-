@@ -1,0 +1,71 @@
+@font-face { font-family: Neoteric; src: url('../fonts/neoteric.ttf'); }
+
+#loginpagecontainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #2980b9;
+
+	text-align: center;
+}
+
+#loginpagecontainer:before{
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#smallerlogincontainer {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100vw;
+}
+
+.sometext {
+	color: white;
+	font-family: 'DK Lemon Yellow Sun';
+	font-size: 30px;
+}
+
+.sometextbox {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 15px;
+	color: rgba(41, 128, 185, 1.0);
+	font-family: Neoteric;
+	font-size: 20px;
+	text-align: center;
+}
+
+.sometextbox:focus {
+	outline: none;
+}
+
+.somebutton {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 15px;
+	margin-top: 10px;
+	background-color: #f1c40f;
+
+	color: white;
+	font-family: 'Wolf in the City';
+	font-size: 30px;
+}
+
+.somebutton:hover {
+	background-color: #f39c12;
+}
+
+.somebutton:active {
+	background-color: #f1c40f;
+}
+
+.somebutton:focus {
+	outline: none;
+}

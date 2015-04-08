@@ -1,11 +1,10 @@
-<ul>
+	<%= stylesheet_link_tag 'home.css' %>
 	<% @rooms.each do |r| %>
 		<li> 
 			<%= r.room_name %> 
 			<%= form_for :sr, url: switch_room_path, remote: true do |s| %>
 				<%= s.hidden_field :room_id, :value => r.id %>
-				<%= s.submit "Switch room" %>
+				<%= s.submit "Switch room" , class: 'somebutton'%>
 			<% end %>
 		</li>
 	<% end %>
-</ul>

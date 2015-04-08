@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper, ApplicationHelper
 
+
   def index
     @room = Room.new
     @rooms = current_user.rooms
@@ -92,7 +93,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def require_login
-    	redirect_to login_path if session[:user_id].nil?
-    end
+  def require_login
+  	redirect_to login_path if session[:user_id].nil?
+  end
 end

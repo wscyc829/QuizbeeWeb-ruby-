@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'faye'
 gem 'thin'
 gem 'bcrypt'
 gem 'mysql2'

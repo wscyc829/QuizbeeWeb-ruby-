@@ -1,6 +1,6 @@
 <ul>
 	<% @messages.each do |message| %>
-		<li>
+		<li style="list-style: none;">
 			<%= message.user.last_name + ':'+ message.body %>
 		</li>
 	<% end %>
