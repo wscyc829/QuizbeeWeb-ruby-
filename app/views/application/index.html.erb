@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Quiz Bee &mdash; Home</title>
-				<%= stylesheet_link_tag 'home.css' %>
-	</head>
-
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 <header>
 	<span>Hello, <%= current_user.first_name %></span>
-	<%= link_to "(logout)"  , logout_path, method: :delete %>
+	<br>
+	<%= link_to "Log out", logout_path, method: :delete %>
 </header>
-<body bgcolor="#d3e5f0">
+
 <div id="roomlist">
 	<div class="somesection">ROOMS</div>
-	<ul id="roomlist-list">
-		<%= render 'rooms/room' %>	
-	</ul>
-	<div id="create-room-form" align="center">
-		<%= render 'rooms/create_room'%>
+	<div id="roomlist-list">
+		<%= render 'rooms/room' %>
+	</div>
+	<div id="create-room-form">
+		<%= render 'rooms/create_room' %>
 	</div>
 </div>
 
@@ -36,7 +30,5 @@
 		<%= render 'friends/add_friend' %>
 	</div>
 </div>
-</body>
-</html>
 
 

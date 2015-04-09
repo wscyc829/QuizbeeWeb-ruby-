@@ -1,9 +1,9 @@
 <ul>
 	<% @questions.each do |question| %>
-		<li align="left"style="list-style: none;">
+		<li>
 			<%= question.body %>
 
-			<ul align="left" style="list-style: none;">
+			<ul>
 				<% question.comments.each do |comment|%>
 					<li> <%= comment.user.last_name + ':' + comment.body %></li>
 					<br>
@@ -16,9 +16,9 @@
 				<% end %>
 			</ul>
 			<%= form_for :pc, url: post_comment_path, remote: true do |c| %>
-				<%= c.text_field :body, placeholder: "Enter the answer", class: 'sometextbox' %>
+				<%= c.text_field :body, placeholder: "Enter the answer" %>
 				<%= c.hidden_field :question_id, :value => question.id %>
-				<%= c.submit "Post comment", class: 'somebutton' %>
+				<%= c.submit "Post comment" %>
 			<% end %>
 		</li>
 	<% end %>

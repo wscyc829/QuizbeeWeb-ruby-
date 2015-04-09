@@ -7,30 +7,13 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper, ApplicationHelper
 
-
   def index
     @room = Room.new
-    @rooms = current_user.rooms
 
     @friend = Friendship.new
-    @friends = Array.new
-    friendships = current_user.friendships + current_user.users
-      
+    
+    update
 
-    friendships.each do |f|
-      if f.friend.id == current_user.id
-        @friends.push(f.user)
-        @rooms += f.user.rooms
-      else
-        @friends.push(f.friend)
-        @rooms += f.friend.rooms
-      end
-    end
-
-    if entered?
-      @questions = current_room.questions
-      @messages = current_room.messages
-    end
   end
 
   def logout
@@ -42,14 +25,16 @@ class ApplicationController < ActionController::Base
   
   def create_room
     @room = current_user.rooms.create!(room_name: params[:cr][:room_name])
-    @rooms = current_user.rooms
+    
+    update
   end
 
   def add_friend
     f = User.where(first_name: params[:af][:first_name],
                           last_name: params[:af][:last_name]).to_a.first
     @friend = current_user.friendships.create(friend_id: f.id)
-    @friends = current_user.friendships + current_user.users
+    
+    update
   end
 
   def post_question
@@ -93,7 +78,30 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def require_login
-  	redirect_to login_path if session[:user_id].nil?
+    def require_login
+    	redirect_to login_path if session[:user_id].nil?
+    end
+
+    def update
+      @rooms = current_user.rooms
+
+      @friends = Array.new
+
+      friendships = current_user.friendships + current_user.users
+
+      friendships.each do |f|
+        if f.friend.id == current_user.id
+          @friends.push(f.user)
+          @rooms += f.user.rooms
+        else
+          @friends.push(f.friend)
+          @rooms += f.friend.rooms
+        end
+      end
+
+      if entered?
+        @questions = current_room.questions
+        @messages = current_room.messages
+      end
   end
 end
