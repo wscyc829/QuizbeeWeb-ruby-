@@ -1,5 +1,5 @@
-@font-face { font-family: Neoteric; src: url('../fonts/neoteric.ttf'); }
-@font-face { font-family: 'Lemon'; src: url('../fonts/lemon.otf'); }
+@font-face { font-family: Neoteric; src: url("<%= asset_path 'fonts/neoteric.ttf' %>"); }
+@font-face { font-family: 'Lemon'; src: url("<%= asset_path 'fonts/lemon.otf' %>"); }
 
 /* %%%%%%%%%%%%%%% HEADER %%%%%%%%%%%%%%% */
 

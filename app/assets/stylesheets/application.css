@@ -16,12 +16,12 @@
 
 @font-face {
 	font-family: Lemon;
-	src: url(<%= asset_path 'lemon.otf' %>);
+	src: url(<%= asset_path 'fonts/lemon.otf' %>);
 }
 
 @font-face {
 	font-family: Neoteric;
-	src: url(<%= asset_path 'neoteric.ttf' %>);
+	src: url(<%= asset_path 'fonts/neoteric.ttf' %>);
 }
 
 #loginheader {

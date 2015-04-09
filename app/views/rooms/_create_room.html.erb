@@ -1,4 +1,4 @@
-				<%= stylesheet_link_tag 'home.css' %>
+<%= stylesheet_link_tag 'home.css' %>
 <%= form_for :cr, url: create_room_path, autocomplete: :off, remote: true do |r| %>
 	<%= r.text_field :room_name, placeholder: "Create room" , class: 'sometextbox'%>
 	<%= r.submit "Create room", class: 'somebuttonred' %>
